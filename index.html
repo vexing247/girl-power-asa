@@ -11,7 +11,1005 @@
     :root {
       --pink-50: #fdf2f8;
       --pink-100: #fce7f3;
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM Empower Girls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pink-50: #fdf2f8;
+      --pink-100: #fce7f3;
       --pink-200: #fbcfe8;
+      --pink-300: #f9a8d4;
+      --pink-400: #f472b6;
+      --pink-500: #ec4899;
+      --purple-50: #faf5ff;
+      --purple-100: #f3e8ff;
+      --purple-200: #e9d5ff;
+      --purple-300: #d8b4fe;
+      --purple-400: #c084fc;
+      --purple-500: #a855f7;
+      --lavender-100: #ede9fe;
+      --lavender-200: #ddd6fe;
+      --lavender-300: #c4b5fd;
+      --mint-50: #f0fdf4;
+      --mint-100: #dcfce7;
+      --mint-200: #bbf7d0;
+      --mint-300: #86efac;
+      --mint-400: #4ade80;
+      --peach-100: #ffedd5;
+      --peach-200: #fed7aa;
+      --peach-300: #fdba74;
+      --blue-100: #dbeafe;
+      --blue-200: #bfdbfe;
+      --blue-300: #93c5fd;
+      --text-50: #fafafa;
+      --text-100: #f5f5f5;
+      --text-200: #e5e5e5;
+      --text-400: #a3a3a3;
+      --text-500: #737373;
+      --text-600: #525252;
+      --text-700: #404040;
+      --text-800: #262626;
+      --text-900: #171717;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-700);
+      background: var(--text-50);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--pink-200);
+      box-shadow: 0 1px 8px rgba(236,72,153,0.06);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-800);
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-600);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--pink-500); background: var(--pink-50); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400)) !important;
+      color: white !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-700);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(180deg, var(--pink-50) 0%, var(--text-50) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--pink-200) 0%, transparent 70%);
+      opacity: 0.4;
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--purple-200) 0%, transparent 70%);
+      opacity: 0.3;
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--text-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400), var(--pink-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text-600);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text h2 em { color: var(--pink-500); font-style: italic; }
+
+    .hero-text p {
+      font-size: 1.15rem;
+      color: var(--text-500);
+      max-width: 520px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400));
+      color: white;
+      box-shadow: 0 4px 20px rgba(236,72,153,0.25);
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(236,72,153,0.35); }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text-700);
+      border: 2px solid var(--pink-200);
+    }
+
+    .btn-secondary:hover { border-color: var(--pink-400); color: var(--pink-500); transform: translateY(-3px); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-graphic {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 4/3;
+      border-radius: 32px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(236,72,153,0.1);
+      overflow: hidden;
+    }
+
+    .hero-graphic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-graphic::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(236,72,153,0.1), rgba(168,85,247,0.05));
+      border-radius: 32px;
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: white;
+      border-radius: 16px;
+      padding: 0.75rem 1.25rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-weight: 600;
+      font-size: 0.85rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge-1 { top: 15%; left: -10%; animation: float 4s ease-in-out infinite; }
+    .badge-2 { bottom: 20%; right: -10%; animation: float 4s ease-in-out 1s infinite; }
+    .badge-3 { top: 60%; left: -5%; animation: float 4s ease-in-out 2s infinite; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      display: inline-block;
+      background: var(--pink-100);
+      color: var(--pink-500);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      color: var(--text-900);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-500);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .text-center { text-align: center; }
+    .text-center .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    /* ABOUT */
+    #about { background: white; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--text-600);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: var(--pink-50);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-500);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    .about-image {
+      border-radius: 24px;
+      aspect-ratio: 4/3;
+      box-shadow: 0 10px 40px rgba(168,85,247,0.08);
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(236,72,153,0.08);
+      transition: all 0.3s;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(236,72,153,0.15); }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+    }
+
+    /* WHAT WE DO */
+    #activities {
+      background: linear-gradient(180deg, var(--text-50), var(--purple-50));
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .activity-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+      border: 1px solid var(--pink-100);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--pink-300), var(--purple-300));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .activity-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(236,72,153,0.1); }
+    .activity-card:hover::before { opacity: 1; }
+
+    .activity-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .icon-pink { background: var(--pink-100); }
+    .icon-purple { background: var(--purple-100); }
+    .icon-mint { background: var(--mint-100); }
+    .icon-peach { background: var(--peach-100); }
+    .icon-blue { background: var(--blue-100); }
+
+    .activity-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-800);
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-card p {
+      font-size: 0.95rem;
+      color: var(--text-500);
+      line-height: 1.6;
+    }
+
+    /* TEAM */
+    #team { background: white; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background: linear-gradient(135deg, var(--pink-50), var(--purple-50));
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s;
+      border: 1px solid var(--pink-100);
+    }
+
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(236,72,153,0.1); }
+
+    .team-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-300), var(--purple-300));
+      margin: 0 auto 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      box-shadow: 0 4px 20px rgba(236,72,153,0.2);
+    }
+
+    .team-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-800);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pink-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* UNIQUE */
+    #unique {
+      background: linear-gradient(135deg, var(--pink-50), var(--lavender-100), var(--mint-50));
+    }
+
+    .unique-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .unique-content p {
+      font-size: 1.25rem;
+      color: var(--text-600);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-box {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(236,72,153,0.08);
+      border: 2px solid var(--pink-100);
+    }
+
+    .highlight-box p {
+      font-size: 1.15rem;
+      color: var(--text-700);
+      line-height: 1.8;
+    }
+
+    .highlight-box strong { color: var(--pink-500); }
+
+    /* SCHEDULE */
+    #schedule { background: white; }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .schedule-item {
+      background: var(--pink-50);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+      border: 1px solid var(--pink-100);
+      transition: all 0.3s;
+    }
+
+    .schedule-item:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(236,72,153,0.08); }
+
+    .schedule-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .schedule-item h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--pink-400);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-item p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-700);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-400), var(--pink-500));
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--pink-500);
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+    /* FOOTER */
+    footer {
+      background: var(--text-900);
+      color: var(--text-400);
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .footer-logo span { color: var(--pink-400); }
+
+    footer p { font-size: 0.9rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-text p { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-visual { order: -1; }
+      .hero-graphic { max-width: 320px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { order: -1; max-width: 400px; margin: 0 auto; }
+      .badge-1, .badge-2, .badge-3 { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { 
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid var(--pink-200);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+      section { padding: 4rem 1.25rem; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">&#9733;</div>
+        STEM EG
+      </a>
+      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#activities">What We Do</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#past-events">Past Events</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#join" class="nav-cta">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>STEM<br><span class="gradient-text">Empower</span><br>Girls</h1>
+        <h2>Empowering <em>her</em> future in STEM.</h2>
+        <p>We train the next generation of girls in STEM through workshops, competitions, and project-based learning. Bridging creative thinking with real-world innovation.</p>
+        <div class="hero-buttons">
+          <a href="#join" class="btn btn-primary">Join the Movement</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-graphic">
+          <img src="images/codehers 2026/group photo.jpeg" alt="STEM Empower Girls Group Photo" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-content fade-in">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Who We Are</h2>
+          <p>We are a team of passionate girls who train the younger generation for STEM projects and competitions. We provide opportunities for hosting workshops like CodeHers, Innovation Week, and more.</p>
+          <p>We bridge creative thinking towards real-life application, opening doors for girls in STEM to foster innovation. As the first ASA with an <strong>all-girls leadership team</strong> teaching STEM, we believe every girl deserves the chance to explore, create, and lead.</p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Girls-Led</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Free</div>
+              <div class="stat-label">To Join</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">STEM</div>
+              <div class="stat-label">&amp; Design</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">HK</div>
+              <div class="stat-label">Based</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image fade-in">
+          <img src="images/vex robotics senior vex v5 team.png" alt="VEX Robotics Senior Team" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="activities">
+    <div class="section-inner">
+      <div class="text-center fade-in">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Activities &amp; Opportunities</h2>
+        <p class="section-subtitle">From competition training to project-based learning, we offer a comprehensive STEM experience designed for girls who want to make an impact.</p>
+      </div>
+      <div class="activities-grid">
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-pink">&#127942;</div>
+          <h3>Competition Training</h3>
+          <p>Get a general overview of STEM competitions and receive hands-on preparation. Complete project proposals that get assessed and refined.</p>
+        </div>
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-purple">&#128218;</div>
+          <h3>STEM Subject Help</h3>
+          <p>Accelerate your regular studies and overcome academic challenges with targeted subject support from experienced senior students.</p>
+        </div>
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-mint">&#128161;</div>
+          <h3>Project-Based Learning</h3>
+          <p>Solve real-world problems and innovate through hands-on projects. Design proposals, create posters, and develop solutions.</p>
+        </div>
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-peach">&#127908;</div>
+          <h3>Presentation Skills</h3>
+          <p>Develop and train your pitch and presentation abilities. Showcase your talents in various workshop opportunities and events.</p>
+        </div>
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-blue">&#127759;</div>
+          <h3>Workshops &amp; Events</h3>
+          <p>Participate in workshops like CodeHers and Innovation Week. Connect with universities and access exclusive enrichment opportunities.</p>
+        </div>
+        <div class="activity-card fade-in">
+          <div class="activity-icon icon-pink">&#129309;</div>
+          <h3>Service Opportunities</h3>
+          <p>Give back by training the younger generation, mentoring peers, and contributing to the STEM community in Hong Kong.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" style="background: linear-gradient(180deg, var(--text-50), var(--pink-50));">
+    <div class="section-inner">
+      <div class="text-center fade-in">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">In Action</h2>
+        <p class="section-subtitle">See our members competing, collaborating, and leading in STEM.</p>
+      </div>
+      <div class="gallery-grid fade-in">
+        <div class="gallery-item">
+          <img src="images/vex robotics girls team junior.png" alt="VEX Robotics Junior Girls Team" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/vex robotics senior vex v5 team 2 .png" alt="VEX Robotics Senior V5 Team" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/vex robotics senior vex v5 team 3.png" alt="VEX Robotics Senior V5 Team" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- PAST EVENTS -->
+    <section id="past-events" style="background: white;">
+      <div class="section-inner">
+        <div class="text-center fade-in">
+          <span class="section-label">Past Events</span>
+          <h2 class="section-title">What We've Done</h2>
+          <p class="section-subtitle">Look back at our successful workshops and events that have empowered girls in STEM across Hong Kong.</p>
+        </div>
+        <div class="activities-grid">
+          <div class="activity-card fade-in">
+            <div class="activity-icon icon-pink">&#128218;</div>
+            <h3>CodeHers 2026</h3>
+            <p>We hosted the CodeHers 2026 workshop, a hands-on event where girls explored coding, robotics, and design thinking. Participants worked on real-world projects, received mentorship from senior students, and gained confidence in their STEM abilities.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1.5rem;">
+              <img src="images/codehers 2026/Copy of Image_20260307_183245_286.jpeg" alt="CodeHers 2026" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px;" />
+              <img src="images/codehers 2026/Copy of Image_20260307_183245_167.jpeg" alt="CodeHers 2026" style="width: 100%; height: auto; object-fit: contain; border-radius: 12px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- UNIQUE -->
+  <section id="unique">
+    <div class="section-inner">
+      <div class="unique-content fade-in">
+        <span class="section-label">What Makes Us Unique</span>
+        <h2 class="section-title">Why Join Us?</h2>
+        <p>We are the first ASA to have an <strong>all-girls leadership team</strong> to teach STEM. Students will be able to approach unfamiliar STEM areas through the guidance of senior students who have been in their shoes.</p>
+        <div class="highlight-box">
+          <p>&#10024; Our purpose is to provide a platform and regular sessions for girls who are passionate about STEM, where we can advise and offer <strong>competition opportunities</strong> to broaden their horizons. Whether you're exploring STEM for the first time or preparing for advanced competitions, there's a place for you here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="section-inner">
+      <div class="text-center fade-in">
+        <span class="section-label">Details</span>
+        <h2 class="section-title">Meeting Schedule</h2>
+        <p class="section-subtitle">Join us every other Friday after school for an engaging and enriching STEM experience.</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#128197;</div>
+          <h4>Frequency</h4>
+          <p>Biweekly</p>
+        </div>
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#128198;</div>
+          <h4>Day</h4>
+          <p>Friday</p>
+        </div>
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#128338;</div>
+          <h4>Time</h4>
+          <p>15:50 - 16:55</p>
+        </div>
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#127970;</div>
+          <h4>Location</h4>
+          <p>6F Floor / Sci Room</p>
+        </div>
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#128176;</div>
+          <h4>Annual Fee</h4>
+          <p>Free (HKD $0)</p>
+        </div>
+        <div class="schedule-item fade-in">
+          <div class="schedule-icon">&#128101;</div>
+          <h4>Spots</h4>
+          <p>7-15 Students</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="join">
+    <div class="cta-inner fade-in">
+      <h2>Ready to Empower Your Future?</h2>
+      <p>Join a community of passionate girls in STEM. Whether you want to compete, create, or learn - we have a place for you.</p>
+      <a href="#" class="btn btn-white">Sign Up Now &#10140;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">STEM Empower <span>Girls</span></div>
+      <p>Student-led ASA &middot; Hong Kong &middot; Supervised by Ms Jessie Cheung</p>
+      <p>&copy; 2025 STEM Empower Girls</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+     --pink-200: #fbcfe8;
       --pink-300: #f9a8d4;
       --pink-400: #f472b6;
       --pink-500: #ec4899;
